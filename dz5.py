@@ -6,7 +6,14 @@ for symbol in value1:
          result.append(symbol)
 print(len(result))
 #2. Дано целое число (int). Определить сколько нулей в конце этого числа.
-
+value2=str(input("Введите целое число"))
+result2=[]
+for symbol in value2[::-1]:
+     if symbol=='0':
+        result2.append(symbol)
+     else:
+         break
+print(len(result2))
 #3a. Даны списки my_list_1 и my_list_2.
 #Создать список my_result в который вначале поместить
 #элементы на четных местах из my_list_1, а потом все элементы на нечетных местах из my_list_2.
