@@ -1,10 +1,13 @@
 #1. Дано целое число (int). Определить сколько нулей в этом числе.
-value1=input("Введите целое число")
-result=[]
-for symbol in value1:
-     if symbol=="0":
-         result.append(symbol)
-print(len(result))
+#value1=input("Введите целое число")
+#result=[]
+#for symbol in value1:
+     #if symbol=="0":
+         #result.append(symbol)
+#print(len(result))
+value1=str(input("Введите целое число"))
+result=value1.count('0')
+print(result)
 #2. Дано целое число (int). Определить сколько нулей в конце этого числа.
 value2=str(input("Введите целое число"))
 result2=[]
@@ -29,7 +32,7 @@ print(my_result3a)
 #вначале поместить четные элементы (ИМЕННО ЭЛЕМЕНТЫ) из my_list_1 и потом нечетные элементы из my_list_2.
 my_result3b = []
 for symbol in my_list1:
-    if not int(symbol) % 2:
+    if not symbol% 2:
         my_result3b.append(symbol)
 for symbol in my_list2:
     if  symbol % 2:
@@ -72,39 +75,52 @@ print(result7)
 #8.Дана строка my_str в которой символы не повторяются и два символа l_limit, r_limit,
 #которые точно находятся в этой строке. Причем l_limit левее чем r_limit.
 #В переменную sub_str поместить часть строки между этими символами.
+#my_str = "My_long str"
+#r_limit = "t"
+#l_limit = "o"
+#for index,symbol in enumerate(my_str):
+#  if symbol==l_limit:
+#       start=index+1
+#   if symbol == r_limit:
+#  finish=index
+#print(my_str[start:finish])
 my_str = "My_long str"
 r_limit = "t"
 l_limit = "o"
-for index,symbol in enumerate(my_str):
-    if symbol==l_limit:
-        start=index+1
-    if symbol == r_limit:
-        finish=index
-print(my_str[start:finish])
+st=my_str.find(l_limit)
+fn=my_str.find(r_limit)
+print(my_str[st+1:fn])
 #9. Дана строка my_str в которой символы МОГУТ повторяться и два символа l_limit, r_limit,
 #которые точно находятся в этой строке. Причем l_limit левее чем r_limit.
 #В переменную sub_str поместить НАИБОЛЬШУЮ часть строки между этими символами.
 #my_str = "My long string", l_limit = "o", r_limit = "g" -> sub_str = "ng strin".
-my_str = "My long string"
+#my_str = "My long string"
+#r_limit = "g"
+#l_limit = "o"
+#start=[]
+#finish=[]
+#for index,symbol in enumerate(my_str):
+#   if symbol==l_limit:
+#       start.append(index)
+    #    if symbol == r_limit:
+#        finish.append(index)
+#st=min(start)
+#fn=max(finish)
+#print(my_str[st+1:fn])
+my_str = "My oooo long stringggggg"
 r_limit = "g"
 l_limit = "o"
-start=[]
-finish=[]
-for index,symbol in enumerate(my_str):
-    if symbol==l_limit:
-        start.append(index)
-    if symbol == r_limit:
-        finish.append(index)
-st=min(start)
-fn=max(finish)
+st=my_str.find(l_limit)
+fn=my_str.rfind(r_limit)
 print(my_str[st+1:fn])
 #Дан список чисел. Определите, сколько в этом списке элементов,
 #которые больше суммы двух своих соседей (слева и справа), и НАПЕЧАТАЙТЕ КОЛИЧЕСТВО таких элементов.
 #Крайние элементы списка никогда не учитываются, поскольку у них недостаточно соседей.
 #Для списка [2,4,1,5,3,9,0,7] ответом будет 3 потому что 4 > 2+1, 5 > 1+3, 9>3+0.
-mylist_10=[2,4,1,5,3,9,0,7]
+mylist_10=[2,4,1,5,3,9,0,7,7]
 result10=[]
-for index,symbol in enumerate(mylist_10[1::2]):
-  result10.append(int(mylist_10[index+1])+int(mylist_10[index-1]))
-result10.pop(0)
-print(len(result10))
+for index,symbol in enumerate(mylist_10[0:len(mylist_10)-1:]):
+    if int((mylist_10[index+1])+int(mylist_10[index-1]))<int(symbol):
+        result10.append(symbol)
+    print(symbol,int(mylist_10[index+1])+int(mylist_10[index-1]))
+print(len(result10),result10)
