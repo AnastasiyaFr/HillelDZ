@@ -17,13 +17,18 @@ result3=True if value3<100 else False
 print(result3)
 #4) У вас есть переменная my_str, тип - str. Заменить в my_str все маленькие буквы на большие.
 #####################################################
-
+my_str4=input("ВВедите строку")
+my_str4=my_str4.upper()
+print(my_str4)
 #5) У вас есть переменная my_str, тип - str. Заменить в my_str все большие буквы на маленькие.
-#####################################################
+# #####################################################
+# my_str5=input("ВВедите строку5")
+# for symbol in my_str5:
+#     if not my_str5.isupper(symbol):
+#         my_str5.capitalize(symbol)
+# print(my_str5)
 my_str5=input("ВВедите строку5")
-for symbol in my_str5:
-    if not my_str5.isupper(symbol):
-        my_str5.capitalize(symbol)
+my_str5=my_str5.lower()
 print(my_str5)
 #6) У вас есть переменная my_str, тип - str. Если ее длинна меньше 5, то допишите в конец строки себя же. Пример: было - "qwer", стало - "qwerqwer". Если длинна не меньше 5, то оставить строку как есть.
 #####################################################
