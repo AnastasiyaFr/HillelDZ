@@ -48,8 +48,15 @@ for index in my_indexes_6:
 #7) У вас есть строка my_string = '0123456789'.
 #Сгенерировать целые числа (тип int) от 0 до 99 и поместить их в список.
 #Задание нужно выполнить ТОЛЬКО через цикл в цикле(См. пример выше) и приведение типов .
-my_string = '0123456781'
+# my_string = '0123456781'
+# result7=[]
+# for symbol in my_string:
+#         result7.append(int(symbol))
+# print(result7)
+my_string = '0123456789'
 result7=[]
-for symbol in my_string:
-        result7.append(int(symbol))
+for symbol1 in my_string:
+    for symbol2  in my_string:
+        value=int(symbol1+symbol2)
+        result7.append(value)
 print(result7)
