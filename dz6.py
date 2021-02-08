@@ -87,9 +87,8 @@ print(set(my_result7))
 my_str7_1="wsaafddffhjk"
 my_str7_2="wsaafddff"
 my_str7set=set(my_str7_1).intersection(set(my_str7_2))
-my_result7=[value for value in my_str7set if (my_str7_2+my_str7_1).count(value)==2]
-print(my_result7)
-
+my_result7=[value for value in my_str7set if my_str7_2.count(value)==1 and my_str7_1.count(value)==1 ]
+print(my_str7set)
 # 8. Описать с помощью словаря следующую структуру для конкретного человека (можно придумать):
 # Фамилия
 # Имя
