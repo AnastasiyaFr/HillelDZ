@@ -2,10 +2,12 @@
 # Каждая строка файла содержит номер, фамилию, страну, некоторое число (таблица взята с википедии).
 # Фамилия находится всегда на одной и той же позиции в строке.
 import os
-file=open('names', 'r')
+# file=open('names', 'r')
 data=[]
-for line in file.readlines():
-    data.append(line)
+file="names"
+with open(file,"r") as data_file:
+    for line in data_file.readlines():
+        data.append(line)
 result1=[]
 for element in data:
         surname=list(element.split('\t'))
@@ -22,21 +24,20 @@ def create_rnddict():
     import json
     import random
     import string
-    filename="res2.json"
     keys_len = random.randint(5, 20)
-    value=[]
-    data=[]
-    ft= 1
-    while ft <= keys_len:
+    values=[]
+    keys=[]
+    step= 0
+    while step <= keys_len:
         key = ''.join(random.choice(string.ascii_lowercase) for _ in range(5))
-        znach = random.choice([random.randint(-100, 100), random.random(), random.choice([True, False])])
-        data.append(key)
-        value.append( znach )
-        ft += 1
-        dict = {data[i]: value[i] for i in range(len(data))}
+        value = random.choice([random.randint(-100, 100), random.random(), random.choice([True, False])])
+        keys.append(key)
+        values.append(value)
+        step += 1
+        dict = {keys[i]: values[i] for i in range(len(keys))}
     return dict
-newdict=create_rnddict()
-print(newdict)
+# newdict=create_rnddict()
+# print(newdict)
 # 3. Написать функцию generate_and_write_json которая принимает один параметр - полный путь к файлу.
 # Cгенерировать данные для записи с помощью функции из пункта 2 и записать в данный файл.
 def generate_and_write_json(path):
