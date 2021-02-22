@@ -63,8 +63,7 @@ my_str='abce'
 my_str_7_1=[]
 my_str_7_2=[]
 result7=[]
-for symbol in my_str[::2]:
-   my_str_7_1.append(symbol)
+
 for symbol in my_str[1::2]:
     my_str_7_2.append(symbol)
 if len(my_str_7_1)>len(my_str_7_2):

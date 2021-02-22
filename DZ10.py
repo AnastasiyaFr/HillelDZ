@@ -64,8 +64,7 @@ def write_file(path,newdata):
     else:
         print("Unsupported file format")
 # Example
-path="dz10.txt"
+path="dz11.json"
 adddata={"Name":"Anastasiya", "Surname":"Pyatnitsa","DZ":"10","Result":"100" }
-write_file(path, adddata)
 result=read_file(path)
 print(result)
