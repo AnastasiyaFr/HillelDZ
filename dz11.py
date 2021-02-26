@@ -2,6 +2,8 @@
 # 1. Необходимо написать функцию, которая считает эти данные из файла. Параметр функции - имя файла.
 import json
 import re
+import csv
+
 filename="dz11.json"
 def read_json(path):
     with open(filename, "r") as json_file:
@@ -30,3 +32,10 @@ result3 = sorted(data, key=sort_by_dday)
 def sort_key_by_len_name(sort_dict):
     return len(sort_dict["text"])
 result4 = sorted(data, key=sort_key_by_len_name)
+def write_csv(path, adddata):
+    with open(path, 'w', newline='') as csvfile:
+        fieldnames = adddata.keys()
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow(adddata)
+    return writer

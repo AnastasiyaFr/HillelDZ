@@ -13,7 +13,7 @@ def write_csv(path,data):
         writer = csv.writer(csv_file)
         writer.writerow(["Author","Quote","URL"])
         writer.writerows(data)
-    return
+    return print("Your file for task 1 is written")
 
 #Create main function
 def create_citates_csv(path,number):
@@ -40,7 +40,7 @@ def create_citates_csv(path,number):
                     quote.remove(quotei)
     data = list(zip(sorted(author), quote, link))
     write_csv(path,data)
-    return print("Your file for task 1 is written")
+
 
 #Example
 path="dz12_authors.csv"
