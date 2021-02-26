@@ -86,4 +86,4 @@ def write_json(path, adddata):
 path="authors12.txt"
 result21=read_txt_list(path)
 result22=result21todict(result21)
-write_json("authors12.txt", result22)
+write_json("authors12.json", result22)
